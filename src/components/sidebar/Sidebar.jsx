@@ -1,4 +1,3 @@
-import React from "react";
 import { RiHome5Line } from "react-icons/ri";
 import { PiPercent } from "react-icons/pi";
 import { RiPieChartLine } from "react-icons/ri";
@@ -7,13 +6,11 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import { IoSettingsOutline } from "react-icons/io5";
 import { AiOutlineLogout } from "react-icons/ai";
 
-const Sidebar = (props) => {
-  const { showMenu } = props;
-
+const Sidebar = () => {
   return (
     <div
-      className={`bg-[#1F1D2B] fixed lg-left-0 top-0 w-28 h-full flex flex-col justify-between py-6 rounded-tr-xl
-    z-50 transition-all ${showMenu ? "left-0" : "-left-full"}`}
+      className="bg-[#1F1D2B] fixed lg-left-0 top-0 w-28 h-full flex flex-col justify-between py-6 rounded-tr-xl
+    z-50 transition-all"
     >
       <div>
         <ul className="pl-4">
