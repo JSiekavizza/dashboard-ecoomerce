@@ -12,20 +12,11 @@ app.use(
   })
 );
 app.use(express.json());
+app.use("/uploads", express.static("uploads")); // Servir archivos estáticos (imágenes)
 
-// Ruta de prueba
-app.get("/", (req, res) => {
-  res.send("✅ Backend del Dashboard E-commerce");
-});
-
-// Ruta del dashboard (ejemplo)
-app.get("/api/dashboard/stats", (req, res) => {
-  res.json({
-    totalSales: 10000,
-    activeUsers: 150,
-    pendingOrders: 5,
-  });
-});
+// Ruta del dashboard
+const dashboardRoutes = require("./src/routes/dashboard");
+app.use("/api/dashboard", dashboardRoutes);
 
 // Iniciar servidor
 const PORT = process.env.PORT || 3001;
